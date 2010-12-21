@@ -1,0 +1,89 @@
+.Dd 11/28/10
+.Dt sha256crack 1
+.Os Darwin
+.Sh NAME
+.Nm sha256crack
+.Nd crack passwords hashed with SHA-256 using OpenCL.
+.Sh SYNOPSIS
+.Nm
+.Op Fl h | -help
+.Op options
+.Op Ar hash
+.Sh DESCRIPTION
+.Nm
+cracks passwords hashed with the SHA-256 algorithm via
+brute force hash calculation.
+It calculates hashes for all possible strings in a given range of length
+composed of characters in a given character set.
+.Pp
+Depending on options passed,
+.Nm
+may run on the host CPU or an OpenCL device, such as the GPU.
+.Sh OPTIONS
+.Bl -tag -width -indent
+.It Fl h, -help
+Output a brief help message.
+.It Fl H, -host
+Run without OpenCL, use the host CPU to perform the calculation.
+.It Fl C, -cpu
+Run with OpenCL, use the CPU device.
+.It Fl G, -gpu
+Run with OpenCL, use the GPU device.
+.It Fl d Ar DEV , Fl -device Ar DEV
+Run with OpenCL, use device specified by
+.Ar DEV .
+Permissible devices include:
+.Bl -tag -width -indent
+.It 0
+no device, equivalent to
+.Fl -host
+.It 1
+CPU
+.It 2
+GPU (default)
+.It 4
+Accelerator
+.El
+.It Fl i Ar MIN , Fl -min-length Ar MIN
+Set minimum password length to
+.Ar MIN .
+Defaults to 3.
+.It Fl a Ar MAX , Fl -max-length Ar MAX
+Set maximum password length to
+.Ar MAX .
+Defaults to 5.
+.It Fl c Ar SET , Fl -charset Ar SET
+Set the password character set to
+.Ar SET .
+The default set is composed of small letters of the English alphabet.
+.It Fl k Ar S , Fl -chunk-size Ar S
+Set the OpenCL chunk size to
+.Ar S .
+Defaults to 1000000.
+Passing 0 as the chunk size will prevent
+.Nm
+from splitting the calculation into chunks.
+.It Fl s, -silent
+Do not print verbose information.
+This will cause
+.Nm
+to only output the password, if a match is found.
+If no match is found,
+.Nm
+will produce no output.
+.Pp
+.It Ar hash
+The hash to crack.
+If no
+.Ar hash
+is specified,
+.Nm
+will use the hash for the "hello" password.
+.El
+.Pp
+.\" .Sh ENVIRONMENT
+.\" .Sh FILES
+.\" .Sh DIAGNOSTICS
+.\" .Sh SEE ALSO
+.\" .Sh BUGS
+.\" .Sh HISTORY
