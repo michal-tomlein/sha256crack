@@ -177,8 +177,9 @@ char * reverse_sha256(const char * hash, int min_length, int max_length, const c
     int character_set_length = strlen(character_set), str_length;
     char * str_hash;
     char * str;
-    int id, i, t, range, remainder;
-    uint32_t max_id = pow(character_set_length, max_length);
+    int i, t, range;
+    int64_t id, remainder;
+    int64_t max_id = pow(character_set_length, max_length);
     int done = 0;
     char * result = NULL;
 
