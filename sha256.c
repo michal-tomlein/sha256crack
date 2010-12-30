@@ -32,6 +32,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include <omp.h>
 
 #include "sha256.h"
 
