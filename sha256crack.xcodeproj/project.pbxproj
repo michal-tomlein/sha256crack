@@ -228,6 +228,36 @@
 			};
 			name = Release;
 		};
+		90C3798912C7D7220058DC01 /* Debug (no OpenMP) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ENABLE_OPENMP_SUPPORT = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = "Debug (no OpenMP)";
+		};
+		90C3798A12C7D7220058DC01 /* Debug (no OpenMP) */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = sha256crack;
+			};
+			name = "Debug (no OpenMP)";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -235,6 +265,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB928608733DD80010E9CD /* Debug */,
+				90C3798A12C7D7220058DC01 /* Debug (no OpenMP) */,
 				1DEB928708733DD80010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -244,6 +275,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB928A08733DD80010E9CD /* Debug */,
+				90C3798912C7D7220058DC01 /* Debug (no OpenMP) */,
 				1DEB928B08733DD80010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
