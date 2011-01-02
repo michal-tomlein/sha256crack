@@ -1,6 +1,13 @@
 CC=gcc
+UNAME_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+ifeq ($(UNAME_S),Darwin)
 CFLAGS=-std=gnu99 -fopenmp
 LIBS=-framework OpenCL
+else
+CUDA_INCLUDE=/usr/local/cuda/include
+CFLAGS=-std=gnu99 -fopenmp -I$(CUDA_INCLUDE)
+LIBS=-lm -lOpenCL
+endif
 EXECUTABLE=sha256crack
 OUTPUT_DIR=build
 INSTALL_PREFIX=/usr/local

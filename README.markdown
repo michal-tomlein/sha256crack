@@ -11,10 +11,12 @@ OpenCL device, such as the GPU.
 Requirements
 ============
 
-Currently, only Mac OS X 10.6 is supported.
+Currently, Mac OS X 10.6 and other Unices are supported.
 
-Support for other systems will be added.  This will require modifying
-the Makefile and possibly some minor changes to the code.
+On systems other than Mac OS X, the Makefile requires CUDA to be installed.
+
+An OpenCL-compatible GPU is not required to run the program
+with the --host or --cpu options.
 
 Installation
 ============

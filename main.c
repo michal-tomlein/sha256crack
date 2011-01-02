@@ -29,7 +29,11 @@
 #include <getopt.h>
 #include <assert.h>
 #include <math.h>
-#include <OpenCL/OpenCL.h>
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/opencl.h>
+#endif
 
 #include "sha256.h"
 #include "sha256.cl.h"
